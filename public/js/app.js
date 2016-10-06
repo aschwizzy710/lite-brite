@@ -6,7 +6,7 @@
 
 
     makeGrid();
-    $('.cell').on('mouseover', changeColor);
+    $('.cell').on('click', changeColor);
 
     function makeGrid(){
       //let's make some rows and put them in the body
