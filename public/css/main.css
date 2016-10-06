@@ -1,9 +1,13 @@
 body{
-  background-color: tomato;
+  background-color: white;
 }
 
 .cell {
   border: 1px solid black;
   width: 1em;
   height: 1em;
+}
+
+.red{
+  background-color: red;
 }
