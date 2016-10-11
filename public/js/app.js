@@ -3,13 +3,27 @@
     // var numberOfRows = 15; // number of rows in the grid
     // var numberOfCols = 15; // number of cols in the grid
     var canvas = $('#canvas'); // my placement area - think of paper in drawing
-
+    var updateGridButton = $('#update-grid-button');
+    var numberOfColsInput = $('#number-of-cols');
+    var numberOfRowsInput = $('#number-of-rows');
 
     makeGrid(15, 15);
-    clearGrid();
-    makeGrid(30, 30);
     $('.cell').on('click', changeColor);
+    updateGridButton.on('click', updateGridSize);
+    // clearGrid();
+    // makeGrid(30, 30);
 
+    function updateGridSize(){
+      clearGrid(); // remove the current grid
+      //grab tyhe number of columns from the unput for the new grid
+      var newColNumber = parseInt(numberOfColsInput.val());
+      console.log(newColNumber);
+      // grab the number of rows from the input for the new grid
+      var newRowNumber = parseInt(numberOfRowsInput.val());
+      //make the new grid based on the new rows and columns
+      makeGrid(newRowNumber, newColNumber);
+      $('.cell').on('click', changeColor);
+    }
     function clearGrid(){
       canvas.empty();
     }
