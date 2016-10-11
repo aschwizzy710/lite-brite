@@ -6,6 +6,7 @@
     var updateGridButton = $('#update-grid-button');
     var numberOfColsInput = $('#number-of-cols');
     var numberOfRowsInput = $('#number-of-rows');
+    var max = 100;
 
     makeGrid(15, 15);
     $('.cell').on('click', changeColor);
@@ -15,11 +16,18 @@
 
     function updateGridSize(){
       clearGrid(); // remove the current grid
-      //grab tyhe number of columns from the unput for the new grid
+      //grab the number of columns from the unput for the new grid
       var newColNumber = parseInt(numberOfColsInput.val());
       console.log(newColNumber);
+      if (newColNumber > max){
+        newColNumber.val('');
+        updateGridButton.on('disabled', true);
+      }
       // grab the number of rows from the input for the new grid
       var newRowNumber = parseInt(numberOfRowsInput.val());
+      if (newRowNumber > max){
+        newRowNumber.val('');
+      }
       //make the new grid based on the new rows and columns
       makeGrid(newRowNumber, newColNumber);
       $('.cell').on('click', changeColor);

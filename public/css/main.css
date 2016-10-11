@@ -11,3 +11,7 @@ body{
 .red{
   background-color: red;
 }
+
+#update-grid-button {
+  margin-top: 22px;
+}
