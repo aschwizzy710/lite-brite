@@ -15,3 +15,28 @@ body{
 #update-grid-button {
   margin-top: 22px;
 }
+
+.color {
+  border: 1px solid black;
+  width: 1em;
+  height: 1em;
+}
+
+#canvas {
+  margin: 0 auto;
+  float: none;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.green {
+  background-color: green;
+}
+
+.btn-yellow {
+  background-color: yellow;
+  border-radius: 10px;
+  border-color: yellow;
+}

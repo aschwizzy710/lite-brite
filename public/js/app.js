@@ -3,16 +3,24 @@
     // var numberOfRows = 15; // number of rows in the grid
     // var numberOfCols = 15; // number of cols in the grid
     var canvas = $('#canvas'); // my placement area - think of paper in drawing
+    var colorGrid = $('#color-grid'); // pick your lite-brite color here
     var updateGridButton = $('#update-grid-button');
     var numberOfColsInput = $('#number-of-cols');
     var numberOfRowsInput = $('#number-of-rows');
+    var blueButton = $('.blue');
+    var greenButton = $('.green');
+    var yellowButton = $('.yellow');
     var max = 100;
+    var colors = false;
 
     makeGrid(15, 15);
     $('.cell').on('click', changeColor);
+    $('.btn').on('click', makeItBlue);
+    $('.btn-green').on('click', makeItGreen);
     updateGridButton.on('click', updateGridSize);
     // clearGrid();
     // makeGrid(30, 30);
+    makeColorGrid();
 
     function updateGridSize(){
       clearGrid(); // remove the current grid
@@ -31,6 +39,7 @@
       //make the new grid based on the new rows and columns
       makeGrid(newRowNumber, newColNumber);
       $('.cell').on('click', changeColor);
+      // $('.cell').on('click', makeItBlue);
     }
     function clearGrid(){
       canvas.empty();
@@ -38,6 +47,23 @@
     function changeColor(event){
       // just this cell's background
       $(this).toggleClass('red');
+      // colors = true;
+      // $().toggleClass('blue')
+      // if (!colors = false) {
+      //   $('.cell').on('click', makeItBlue);
+      // }
+    }
+    function makeItBlue(event){
+      // change cell background color to blue
+      $('.cell').on('click', function(){
+        $(this).toggleClass('blue');
+      });
+    }
+    function makeItGreen(event){
+      // change cell background color to blue
+      $('.cell').on('click', function(){
+        $(this).toggleClass('green');
+      });
     }
     function makeGrid(numberOfRows, numberOfCols){
       //let's make some rows and put them in the body
@@ -50,6 +76,17 @@
         }
         canvas.append(row);
       }
+      function makeColorGrid(){
+        //let's make some rows and put them in the body
+        for(var rowCount = 0; rowCount < 5; rowCount +=1){
+          var row = $('<tr></tr>');
+          for(var colCount = 0; colCount < 5; colCount +=1){
+              var column = $('<td></td>');
+              column.addClass('color');
+              row.append(column);
+          }
+          colorGrid.append(row);
+        }
     }
-
+  }
 }());
