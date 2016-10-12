@@ -7,16 +7,15 @@
     var updateGridButton = $('#update-grid-button');
     var numberOfColsInput = $('#number-of-cols');
     var numberOfRowsInput = $('#number-of-rows');
-    var blueButton = $('.blue');
-    var greenButton = $('.green');
-    var yellowButton = $('.yellow');
     var max = 100;
     var colors = false;
 
     makeGrid(15, 15);
     $('.cell').on('click', changeColor);
-    $('.btn').on('click', makeItBlue);
+    $('.btn-blue').on('click', makeItBlue);
     $('.btn-green').on('click', makeItGreen);
+    $('.btn-yellow').on('click', makeItYellow);
+    $('.btn-erase').on('click', eraser);
     updateGridButton.on('click', updateGridSize);
     // clearGrid();
     // makeGrid(30, 30);
@@ -39,7 +38,6 @@
       //make the new grid based on the new rows and columns
       makeGrid(newRowNumber, newColNumber);
       $('.cell').on('click', changeColor);
-      // $('.cell').on('click', makeItBlue);
     }
     function clearGrid(){
       canvas.empty();
@@ -47,22 +45,42 @@
     function changeColor(event){
       // just this cell's background
       $(this).toggleClass('red');
+    }
       // colors = true;
       // $().toggleClass('blue')
       // if (!colors = false) {
       //   $('.cell').on('click', makeItBlue);
       // }
-    }
     function makeItBlue(event){
+      // remove everything
+      $('.cell').off('click');
       // change cell background color to blue
       $('.cell').on('click', function(){
         $(this).toggleClass('blue');
       });
     }
     function makeItGreen(event){
-      // change cell background color to blue
+      // remove everything
+      $('.cell').off('click');
+      // change cell background color to green
       $('.cell').on('click', function(){
         $(this).toggleClass('green');
+      });
+    }
+    function makeItYellow(event){
+      // remove everything
+      $('.cell').off('click');
+      // change cell background color to blue
+      $('.cell').on('click', function(){
+        $(this).toggleClass('yellow');
+      });
+    }
+    function eraser(event){
+      // remove everything
+      $('.cell').off('click');
+      // change cell background color to blue
+      $('.cell').on('click', function(){
+        $(this).toggleClass('white');
       });
     }
     function makeGrid(numberOfRows, numberOfCols){
