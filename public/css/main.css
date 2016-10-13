@@ -13,7 +13,7 @@ body{
 }
 
 #update-grid-button {
-  margin-top: 22px;
+  margin-top: 24px;
 }
 
 .color {
@@ -26,7 +26,6 @@ body{
   margin: 0 auto;
   float: none;
 }
-
 .blue {
   background-color: blue;
 }
@@ -39,6 +38,10 @@ body{
   background-color: yellow;
 }
 
+.orange {
+  background-color: orange;
+}
+
 .white {
   background-color: white;
 }
@@ -47,4 +50,8 @@ body{
   background-color: yellow;
   border-radius: 10px;
   border-color: yellow;
+}
+
+.btn-yellow:hover {
+  background-color: #FED85D;
 }

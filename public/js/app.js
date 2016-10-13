@@ -15,8 +15,14 @@
     $('.btn-blue').on('click', makeItBlue);
     $('.btn-green').on('click', makeItGreen);
     $('.btn-yellow').on('click', makeItYellow);
+    $('.btn-orange').on('click', makeItOrange);
     $('.btn-erase').on('click', eraser);
+    $('#update-grid-button').on('click', function(){
+      $('#canvas').addClass('animated hinge');
+    });
     updateGridButton.on('click', updateGridSize);
+  
+
     // clearGrid();
     // makeGrid(30, 30);
     makeColorGrid();
@@ -28,7 +34,6 @@
       console.log(newColNumber);
       if (newColNumber > max){
         newColNumber.val('');
-        updateGridButton.on('disabled', true);
       }
       // grab the number of rows from the input for the new grid
       var newRowNumber = parseInt(numberOfRowsInput.val());
@@ -73,6 +78,14 @@
       // change cell background color to blue
       $('.cell').on('click', function(){
         $(this).toggleClass('yellow');
+      });
+    }
+    function makeItOrange(event){
+      // remove everything
+      $('.cell').off('click');
+      // change cell background color to blue
+      $('.cell').on('click', function(){
+        $(this).toggleClass('orange');
       });
     }
     function eraser(event){
