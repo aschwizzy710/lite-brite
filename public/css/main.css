@@ -48,10 +48,10 @@ body{
 
 .btn-yellow {
   background-color: yellow;
-  border-radius: 10px;
-  border-color: yellow;
+  border: 1px solid #FFEB00;
 }
 
 .btn-yellow:hover {
   background-color: #FED85D;
+  border: 1px solid #FFEB00;
 }

@@ -17,11 +17,11 @@
     $('.btn-yellow').on('click', makeItYellow);
     $('.btn-orange').on('click', makeItOrange);
     $('.btn-erase').on('click', eraser);
-    $('#update-grid-button').on('click', function(){
-      $('#canvas').addClass('animated hinge');
-    });
+    // $('#update-grid-button').on('click', function(){
+    //   $('#canvas').addClass('animated hinge');
+    // });
     updateGridButton.on('click', updateGridSize);
-  
+
 
     // clearGrid();
     // makeGrid(30, 30);
