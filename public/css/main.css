@@ -7,7 +7,18 @@ body{
   width: 1em;
   height: 1em;
 }
-
+.page-wrap {
+  min-height: 100%;
+  /* Equal to footer length */
+  margin-bottom: -100px;
+}
+.page-wrap:after {
+  content: "";
+  display: block;
+}
+.footer, .page-wrap:after {
+  height: 100px;
+}
 .red{
   background-color: red;
 }

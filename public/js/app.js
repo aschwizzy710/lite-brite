@@ -8,7 +8,6 @@
     var numberOfColsInput = $('#number-of-cols');
     var numberOfRowsInput = $('#number-of-rows');
     var max = 100;
-    var colors = false;
 
     makeGrid(15, 15);
     $('.cell').on('click', changeColor);
@@ -17,16 +16,24 @@
     $('.btn-yellow').on('click', makeItYellow);
     $('.btn-orange').on('click', makeItOrange);
     $('.btn-erase').on('click', eraser);
+    updateGridButton.on('click', updateGridSize);
+    $('.navbar-fixed-bottom').hover(function() {
+      $(this).animate({ bottom: '700px' }, 'fast');
+    },
+    function() {
+      $(this).animate({ left: '600px' }, 'fast');
+    });
     // $('#update-grid-button').on('click', function(){
     //   $('#canvas').addClass('animated hinge');
     // });
-    updateGridButton.on('click', updateGridSize);
+    //make the new grid based on the new rows and columns
+    // makeGrid(newRowNumber, newColNumber);
+    // $('.cell').on('click', changeColor);
 
 
     // clearGrid();
     // makeGrid(30, 30);
-    makeColorGrid();
-
+    // makeColorGrid();
     function updateGridSize(){
       clearGrid(); // remove the current grid
       //grab the number of columns from the unput for the new grid
@@ -40,9 +47,14 @@
       if (newRowNumber > max){
         newRowNumber.val('');
       }
-      //make the new grid based on the new rows and columns
-      makeGrid(newRowNumber, newColNumber);
-      $('.cell').on('click', changeColor);
+      if (newColNumber <= 100 && newRowNumber <= 100) {
+            makeGrid(newRowNumber, newColNumber);
+            $('.cell').on('click', changeColor);
+        }
+        else{
+          makeGrid(15, 15);
+          $('.cell').on('click', changeColor);
+        }
     }
     function clearGrid(){
       canvas.empty();

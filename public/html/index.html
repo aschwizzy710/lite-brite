@@ -13,34 +13,33 @@
     Lite-Brite!
     </h1>
   </div>
-  <form>
+  <div class="page-wrap">
     <div class="container">
       <div class="row">
         <div class="col-md-4">
           <div class="form-group">
             <label for="number-of-rows">Please enter the number of rows:</label>
-            <input type="number" id="number-of-rows" class="form-control" placeholder="Enter a number < 100" max="100">
+            <input type="number" id="number-of-rows" class="form-control" placeholder="Enter a number < 100" max="3">
           </div>
         </div>
         <div class="col-md-4">
           <div class="form-group">
             <label for="number-of-cols">Please enter the number of columns:</label>
-            <input type="number" id="number-of-cols" class="form-control" placeholder="Enter a number < 100" max="100">
+            <input type="number" id="number-of-cols" class="form-control" placeholder="Enter a number < 100"  maxlength="2" min="1" max="100">
           </div>
         </div>
         <div class="col-md-4">
-          <button type="submit" id="update-grid-button" class="btn btn-success btn-block">Update Grid Size</button>
+           <button type="submit" id="update-grid-button" class="btn btn-success btn-block">Update Grid Size</button>
         </div>
       </div>
-  </form>
+    </div>
     <div class="table-responsive">
       <table id="canvas"></table>
     </div>
-      <table id="color-grid"></table>
-    </div>
   <div class="footer navbar-fixed-bottom">
-    <h1 class="text-center">Colors</h1>
-      <div class="container text-center">
+    <div class="container text-center">
+    <h1>Colors</h1>
+
         <button class="btn btn-primary btn-blue">Blue</button>
         <button class="btn btn-success btn-green">Green</button>
         <button class="btn btn-yellow">Yellow</button>
