@@ -1,11 +1,21 @@
-body{
+body {
   background-color: white;
 }
-
+.page-header {
+  background-image: url(../image/litebrite.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  padding-top: 110px;
+  margin-top: 0px;
+}
 .cell {
   border: 1px solid black;
   width: 1em;
   height: 1em;
+  background-color:black;
+}
+.hover-effect {
+  border: 1px solid white;
 }
 .page-wrap {
   min-height: 100%;
@@ -22,21 +32,25 @@ body{
 .red{
   background-color: red;
 }
-
+.button-column {
+  margin-top: -17px;
+}
+#clear-grid-button {
+  margin-top: 0px !important;
+}
 #update-grid-button {
   margin-top: 24px;
 }
-
 .color {
   border: 1px solid black;
   width: 1em;
   height: 1em;
 }
-
 #canvas {
   margin: 0 auto;
   float: none;
 }
+
 .blue {
   background-color: blue;
 }

@@ -17,11 +17,8 @@
     $('.btn-orange').on('click', makeItOrange);
     $('.btn-erase').on('click', eraser);
     updateGridButton.on('click', updateGridSize);
-    $('.navbar-fixed-bottom').hover(function() {
-      $(this).animate({ bottom: '700px' }, 'fast');
-    },
-    function() {
-      $(this).animate({ left: '600px' }, 'fast');
+    $('.cell').on('hover', function() {
+      $('cell').addClass(hover-effect);
     });
     // $('#update-grid-button').on('click', function(){
     //   $('#canvas').addClass('animated hinge');
@@ -30,7 +27,14 @@
     // makeGrid(newRowNumber, newColNumber);
     // $('.cell').on('click', changeColor);
 
-
+    function moveOutTheWay(){
+      $('.navbar-fixed-bottom').hover(function() {
+        $(this).animate({ bottom: '700px' }, 'fast');
+      },
+      function() {
+        $(this).animate({ left: '600px' }, 'fast');
+      });
+    }
     // clearGrid();
     // makeGrid(30, 30);
     // makeColorGrid();
@@ -54,6 +58,9 @@
         else{
           makeGrid(15, 15);
           $('.cell').on('click', changeColor);
+        }
+      if (newColNumber >= 33 && newRowNumber >= 33){
+          moveOutTheWay();
         }
     }
     function clearGrid(){
