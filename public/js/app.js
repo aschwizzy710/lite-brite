@@ -5,6 +5,7 @@
     var canvas = $('#canvas'); // my placement area - think of paper in drawing
     var colorGrid = $('#color-grid'); // pick your lite-brite color here
     var updateGridButton = $('#update-grid-button');
+    var clearGridButton = $('#clear-grid-button');
     var numberOfColsInput = $('#number-of-cols');
     var numberOfRowsInput = $('#number-of-rows');
     var max = 100;
@@ -20,10 +21,11 @@
     $('.cell').on('hover', function() {
       $('cell').addClass(hover-effect);
     });
-    // $('#update-grid-button').on('click', function(){
-    //   $('#canvas').addClass('animated hinge');
-    // });
-    //make the new grid based on the new rows and columns
+    $('#clear-grid-button').on('click', function(){
+      $('#canvas').addClass('animated hinge');
+    });
+    // clearGridButton.on('click', updateGridSize);
+    // make the new grid based on the new rows and columns
     // makeGrid(newRowNumber, newColNumber);
     // $('.cell').on('click', changeColor);
 
@@ -112,7 +114,7 @@
       $('.cell').off('click');
       // change cell background color to blue
       $('.cell').on('click', function(){
-        $(this).toggleClass('white');
+        $(this).toggleClass('black');
       });
     }
     function makeGrid(numberOfRows, numberOfCols){

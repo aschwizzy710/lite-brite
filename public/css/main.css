@@ -71,6 +71,10 @@ body {
   background-color: white;
 }
 
+.black {
+  background-color: black;
+}
+
 .btn-yellow {
   background-color: yellow;
   border: 1px solid #FFEB00;
